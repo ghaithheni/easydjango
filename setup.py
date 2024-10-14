@@ -13,4 +13,11 @@ setup(
         'Django>=4.2',
         'colorama',
     ],
+    description='A command-line tool for quickly setting up Django projects.',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    author='Ghaith Heni',
+    author_email='elghaithheni@gmail.com',
+    license='MIT',
+    url='https://github.com/ghaithheni/easydjango',
 )

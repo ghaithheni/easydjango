@@ -6,6 +6,7 @@ from .template_creator import create_templates
 from .view_creator import create_home_view
 from .superuser_creator import create_superuser
 from colorama import Fore, Style
+import sys
 
 def print_progress(message):
     print(Fore.BLUE + message + Style.RESET_ALL)
@@ -20,7 +21,7 @@ def create_django_project(project_name, app_name, use_tailwind, username, passwo
 
         os.chdir(project_name)
         print_progress("Creating the Django app...")
-        subprocess.run(['python', 'manage.py', 'startapp', app_name], check=True)
+        subprocess.run([sys.executable, 'manage.py', 'startapp', app_name], check=True)
 
         print_progress("Creating necessary directories for static, media, and templates...")
         for directory in ['templates', 'static', 'media']:
@@ -36,7 +37,7 @@ def create_django_project(project_name, app_name, use_tailwind, username, passwo
         create_home_view(app_name)
 
         print_progress("Running migrations...")
-        subprocess.run(['python', 'manage.py', 'migrate'], check=True)
+        subprocess.run([sys.executable, 'manage.py', 'migrate'], check=True)
 
         print_progress("Creating the superuser...")
         create_superuser(username, password)
