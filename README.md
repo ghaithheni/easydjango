@@ -22,10 +22,10 @@ pip install easydjango-project
 
 ## Usage
 
-To create a new Django project, execute the following command:
+To create a new Django project, execute the following easy command:
 
 ```bash
-easydjango startsimpleproject --tailwind
+easydjango
 ```
 
 You will be prompted to provide the following information:
@@ -38,7 +38,7 @@ Superuser Password (default: `admin`)
 
 ## Example Interaction
 ```bash
-Welcome to the EasyDjango Project Setup!
+Welcome to the EasyDjango Project Setup! 
 Enter the name of your Django project (default: myproject): 
 Enter the name of your Django app (default: myapp): 
 Enter the superuser username (default: admin): 
