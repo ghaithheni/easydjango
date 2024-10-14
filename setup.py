@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='easydjango-project',
-    version='1.0',
+    version='1.0.1',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'easydjango-project=easydjango.cli:main',
+            'easydjango=easydjango.cli:main',
         ],
     },
     install_requires=[
