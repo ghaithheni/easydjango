@@ -15,7 +15,7 @@ EasyDjango is a command-line tool for quickly setting up a new Django project wi
 You can install QuickDjango via pip. First, ensure you have Python and pip installed, then run:
 
 ```bash
-pip install easydjango
+pip install easydjango-project
 ```
 
 > **Note**: The installation command is the same for Windows, macOS, and Linux, but you might need to use pip3 instead on some operating systems.
