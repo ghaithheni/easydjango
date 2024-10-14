@@ -2,6 +2,8 @@
 
 EasyDjango is a command-line tool for quickly setting up a new Django project with customizable options, including app creation, templates, static files, and superuser setup.
 
+[**Click here for a Demo**](#usage)
+
 ## Features
 
 - Create a new Django project and app with minimal commands.
@@ -36,14 +38,10 @@ Superuser Username (default: `admin`)
 Superuser Password (default: `admin`)
 
 
-## Example Interaction
-```bash
-Welcome to the EasyDjango Project Setup! 
-Enter the name of your Django project (default: myproject): 
-Enter the name of your Django app (default: myapp): 
-Enter the superuser username (default: admin): 
-Enter the superuser password (default: admin): 
-```
+## Demonstration
+
+![Usage Example](https://github.com/ghaithheni/easydjango/blob/main/EasyDjango%20Example.gif?raw=true)
+
 
 ## Contributing
 
