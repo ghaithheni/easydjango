@@ -1,8 +1,9 @@
 import os
 
 def create_templates(app_name, project_name, use_tailwind):
-    templates_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates')  # Modify this line
+    templates_dir = os.path.join(os.getcwd(), 'templates')
     os.makedirs(templates_dir, exist_ok=True)
+    print(f"Templates directory: {templates_dir}")
 
     tailwind_script = (
         '    <script src="https://cdn.tailwindcss.com"></script>\n' if use_tailwind else ''
@@ -21,11 +22,14 @@ def create_templates(app_name, project_name, use_tailwind):
 </body>
 </html>"""
 
-    with open(os.path.join(templates_dir, 'base.html'), 'w', encoding='utf-8') as base_file:
-        base_file.write(base_html_content)
+    try:
+        with open(os.path.join(templates_dir, 'base.html'), 'w', encoding='utf-8') as base_file:
+            base_file.write(base_html_content)
+        print("base.html created successfully.")
+    except Exception as e:
+        print(f"Failed to create base.html: {e}")
 
     home_html_content = f"""{{% extends 'base.html' %}}
-
 {{% block content %}}
     <style>
         body {{
@@ -80,5 +84,11 @@ def create_templates(app_name, project_name, use_tailwind):
     </div>
 {{% endblock content %}}"""
 
-    with open(os.path.join(templates_dir, 'home.html'), 'w', encoding='utf-8') as home_file:
-        home_file.write(home_html_content)
+    try:
+        with open(os.path.join(templates_dir, 'home.html'), 'w', encoding='utf-8') as home_file:
+            home_file.write(home_html_content)
+        print("home.html created successfully.")
+    except Exception as e:
+        print(f"Failed to create home.html: {e}")
+
+    print(f"Files in templates directory: {os.listdir(templates_dir)}")
