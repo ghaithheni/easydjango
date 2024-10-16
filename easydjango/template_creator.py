@@ -1,7 +1,7 @@
 import os
 
 def create_templates(app_name, project_name, use_tailwind):
-    templates_dir = os.path.join(app_name, 'templates')
+    templates_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates')  # Modify this line
     os.makedirs(templates_dir, exist_ok=True)
 
     tailwind_script = (
@@ -20,7 +20,6 @@ def create_templates(app_name, project_name, use_tailwind):
 {{% endblock content %}}
 </body>
 </html>"""
-
 
     with open(os.path.join(templates_dir, 'base.html'), 'w', encoding='utf-8') as base_file:
         base_file.write(base_html_content)
@@ -68,7 +67,6 @@ def create_templates(app_name, project_name, use_tailwind):
     <div class="container">
         <h1>Welcome to {project_name}!</h1>
         <p>Congratulations! You have successfully set up your Django project using <strong>EasyDjango</strong>.</p>
-        
         <h2>What to Do Next:</h2>
         <ul>
             <li>Explore the <strong>views.py</strong> file in your app directory (<code>{app_name}/views.py</code>) to customize your application logic.</li>
@@ -77,12 +75,10 @@ def create_templates(app_name, project_name, use_tailwind):
             <li>Visit the <strong>admin panel</strong> by navigating to <code>/admin</code> after running the development server.</li>
             <li>Check the official <a href="https://www.djangoproject.com/">Django documentation</a> for more advanced features and customization options.</li>
         </ul>
-        
         <h2>Need Help?</h2>
         <p>If you have any questions or need assistance, feel free to reach out at <a href="mailto:elghaithheni@gmail.com">elghaithheni@gmail.com</a>.</p>
     </div>
-{{% endblock content %}}
-"""
+{{% endblock content %}}"""
 
     with open(os.path.join(templates_dir, 'home.html'), 'w', encoding='utf-8') as home_file:
         home_file.write(home_html_content)
