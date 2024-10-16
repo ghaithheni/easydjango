@@ -14,6 +14,9 @@ def print_progress(message):
 def print_success(message):
     print(Fore.GREEN + message + Style.RESET_ALL)
 
+def print_error(message):
+    print(Fore.RED + message + Style.RESET_ALL)
+
 def create_django_project(project_name, app_name, use_tailwind, username, password):
     try:
         print_progress("Creating the Django project...")
@@ -44,7 +47,9 @@ def create_django_project(project_name, app_name, use_tailwind, username, passwo
 
         print_success(f'Django project "{project_name}" created successfully with app "{app_name}" and superuser "{username}".')
 
-    except subprocess.CalledProcessError as e:
-        print(Fore.RED + f'Error creating project/app: {e}' + Style.RESET_ALL)
+    except FileNotFoundError:
+        print_error("Error: 'django-admin' command not found. Is Django installed?")
+    except ValueError as ve:
+        print_error(f"Input error: {ve}")
     except Exception as e:
-        print(Fore.RED + f'An unexpected error occurred: {e}' + Style.RESET_ALL)
+        print_error(f"An unexpected error occurred: {e}")

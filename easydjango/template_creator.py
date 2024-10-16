@@ -16,19 +16,18 @@ def create_templates(app_name, project_name, use_tailwind):
     <title>{project_name}</title>
 {tailwind_script}</head>
 <body>
-    <h1>Welcome to {project_name}!</h1>
+{{% block content %}}
+{{% endblock content %}}
 </body>
 </html>"""
+
 
     with open(os.path.join(templates_dir, 'base.html'), 'w', encoding='utf-8') as base_file:
         base_file.write(base_html_content)
 
-    home_html_content = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to {project_name}</title>
+    home_html_content = f"""{{% extends 'base.html' %}}
+
+{{% block content %}}
     <style>
         body {{
             font-family: Arial, sans-serif;
@@ -66,8 +65,6 @@ def create_templates(app_name, project_name, use_tailwind):
             margin: auto;
         }}
     </style>
-</head>
-<body>
     <div class="container">
         <h1>Welcome to {project_name}!</h1>
         <p>Congratulations! You have successfully set up your Django project using <strong>EasyDjango</strong>.</p>
@@ -84,8 +81,8 @@ def create_templates(app_name, project_name, use_tailwind):
         <h2>Need Help?</h2>
         <p>If you have any questions or need assistance, feel free to reach out at <a href="mailto:elghaithheni@gmail.com">elghaithheni@gmail.com</a>.</p>
     </div>
-</body>
-</html>"""
+{{% endblock content %}}
+"""
 
     with open(os.path.join(templates_dir, 'home.html'), 'w', encoding='utf-8') as home_file:
         home_file.write(home_html_content)
