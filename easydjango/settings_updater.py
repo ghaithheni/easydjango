@@ -15,6 +15,9 @@ def update_settings(project_name, app_name):
         # Add static settings
         settings_file.write("\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\n")
         
+        # Add STATIC_ROOT setting
+        settings_file.write("STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n")
+        
         # Update the TEMPLATES setting to include the root templates directory
         settings_file.write(
             "\nTEMPLATES[0]['DIRS'].append(os.path.join(BASE_DIR, 'templates'))\n"
