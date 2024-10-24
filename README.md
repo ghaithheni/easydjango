@@ -47,9 +47,9 @@ Superuser Password (default: `admin`)
 If you find this project useful and would like to support its continued development, consider making a donation. Your contributions will help cover expenses for development tools and other resources.
 
 [![Donate](https://img.shields.io/badge/Donate-❤️-green)](https://gateway.konnect.network/me/ghaithheni)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-☕-orange)](https://www.buymeacoffee.com/ghaithheni)
 
 Thank you for your support! Every contribution, no matter how small, makes a difference!
-
 
 ## Contributing
 
