@@ -42,6 +42,14 @@ Superuser Password (default: `admin`)
 
 ![Usage Example](https://github.com/ghaithheni/easydjango/blob/main/EasyDjango%20Example.gif?raw=true)
 
+## Support This Project
+
+If you find this project useful and would like to support its continued development, consider making a donation. Your contributions will help cover expenses for development tools and other resources.
+
+[![Donate](https://img.shields.io/badge/Donate-❤️-green)](https://gateway.konnect.network/me/ghaithheni)
+
+Thank you for your support! Every contribution, no matter how small, makes a difference!
+
 
 ## Contributing
 
@@ -53,7 +61,7 @@ This project is licensed under the [MIT License](LICENSE). See the LICENSE file 
 
 ## Acknowledgements
 
-Django for being an awesome web framework.
+Django for being an awesome web framework.  
 Colorama for colorful terminal text.
 
 ## Contact
